@@ -21,7 +21,7 @@ const Movies = (props) => {
 
   const query = new URLSearchParams(props.location.search);
 
-  const keyword = query.get("s") || "superman";
+  const keyword = query.get("s") || "";
 
   const [isOpenModal, setIsOpenModal] = React.useState(false);
   const [selectedPoster, setSelectedPoster] = React.useState("");
