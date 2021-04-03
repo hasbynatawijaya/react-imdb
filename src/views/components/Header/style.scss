@@ -1,0 +1,21 @@
+.header {
+  height: 70px;
+  background-color: #131313;
+
+  &__wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 1280px) {
+      max-width: 1280px;
+    }
+
+    @media (min-width: 600px) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+}
