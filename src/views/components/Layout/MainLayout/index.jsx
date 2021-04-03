@@ -4,10 +4,10 @@ import "./style.scss";
 
 import Header from "../../Header";
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, ...rest }) => {
   return (
     <>
-      <Header />
+      <Header {...rest} />
       <div className="container">{children}</div>
     </>
   );

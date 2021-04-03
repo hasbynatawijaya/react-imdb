@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 
 import "./style.scss";
 
-const SearchField = () => {
+const SearchField = (props) => {
   const [keyword, setKeyword] = React.useState("");
+
+  const query = new URLSearchParams(props.location.search);
+
+  React.useEffect(() => {
+    if (query.get("s") !== null) {
+      setKeyword(query.get("s"));
+    }
+  }, []);
 
   return (
     <div className="search-field">

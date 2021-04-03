@@ -15,13 +15,21 @@ export const getMovieList = (keyword, page) => async (dispatch, state) => {
     });
 
     if (response.data) {
-      if (response.data.Search) {
+      if (response.data.Response === "False") {
+        if (prevData.length === 0) {
+          dispatch(setMovieList([]));
+        }
+      } else if (response.data.Search) {
         dispatch(setMovieList(prevData.concat(response.data.Search)));
       }
     }
   } catch (error) {
     throw error;
   }
+};
+
+export const resetMovieList = () => (dispatch) => {
+  dispatch(setMovieList([]));
 };
 
 export const getMovieDetails = (imdbID) => async (dispatch) => {
